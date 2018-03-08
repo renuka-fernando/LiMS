@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{093556CA-EB85-4BAB-9AD1-96681501AF21}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LiMS</RootNamespace>
+    <AssemblyName>LiMS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LiMS.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=12.1.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constant\Constants.cs" />
+    <Compile Include="Controller\BookController.cs" />
+    <Compile Include="Controller\BookTypeController.cs" />
+    <Compile Include="Controller\HolidayController.cs" />
+    <Compile Include="Controller\MemberController.cs" />
+    <Compile Include="Controller\SQLCommandController.cs" />
+    <Compile Include="Controller\SuretyController.cs" />
+    <Compile Include="Controller\TransactionController.cs" />
+    <Compile Include="Database\DBConnection.cs" />
+    <Compile Include="Database\ServerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Database\ServerForm.Designer.cs">
+      <DependentUpon>ServerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ServerModel.cs" />
+    <Compile Include="FileInputOutput\ImportClass.cs" />
+    <Compile Include="LiMS_DBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LiMS_DBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BookModel.cs" />
+    <Compile Include="Model\BookTypeModel.cs" />
+    <Compile Include="Model\Gender.cs" />
+    <Compile Include="Model\SQLInsertCommandModel.cs" />
+    <Compile Include="Model\SQLSelectCommandModel.cs" />
+    <Compile Include="Model\MemberModel.cs" />
+    <Compile Include="Model\SettingsModel.cs" />
+    <Compile Include="Model\SuretyModel.cs" />
+    <Compile Include="Model\TransactionModel.cs" />
+    <Compile Include="MyControl\BorrowedBook\BorrowBookPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControl\BorrowedBook\BorrowBookPanel.Designer.cs">
+      <DependentUpon>BorrowBookPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControl\HeaderBorder\HeaderBorder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControl\HeaderBorder\HeaderBorder.Designer.cs">
+      <DependentUpon>HeaderBorder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControl\HolidayCalender\Cell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControl\HolidayCalender\DayNameLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControl\HolidayCalender\HolidayCalender.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControl\HolidayCalender\HolidayCalender.Designer.cs">
+      <DependentUpon>HolidayCalender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControl\ReturnBook\ReturnBookPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControl\ReturnBook\ReturnBookPanel.Designer.cs">
+      <DependentUpon>ReturnBookPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControl\TransactionPanel\Partial_BorrowStepPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControl\TransactionPanel\Partial_ReturnStepPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControl\TransactionPanel\TransactionTabPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControl\TransactionPanel\TransactionTabPanel.Designer.cs">
+      <DependentUpon>TransactionTabPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControl\TransactionPanel\Partial_VerifyStepPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\BookReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\MemberReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MemberReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Validation\ValidationClass.cs" />
+    <Compile Include="View\BookType\BookTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BookType\BookTypeForm.Designer.cs">
+      <DependentUpon>BookTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BookType\EditTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BookType\EditTypeForm.Designer.cs">
+      <DependentUpon>EditTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Book\AddBookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Book\AddBookForm.Designer.cs">
+      <DependentUpon>AddBookForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Book\BookHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Book\BookHistoryForm.Designer.cs">
+      <DependentUpon>BookHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Book\BookReportViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Book\BookReportViewerForm.Designer.cs">
+      <DependentUpon>BookReportViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FineFeeReceipt\FineFeeReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FineFeeReceipt\FineFeeReceiptForm.Designer.cs">
+      <DependentUpon>FineFeeReceiptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Holiday\HolidayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Holiday\HolidayForm.Designer.cs">
+      <DependentUpon>HolidayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Home\HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Home\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Import\ImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Import\ImportForm.Designer.cs">
+      <DependentUpon>ImportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Member\AddMemberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Member\AddMemberForm.Designer.cs">
+      <DependentUpon>AddMemberForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Member\AddMemberTableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Member\AddMemberTableForm.Designer.cs">
+      <DependentUpon>AddMemberTableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Member\MemberReportViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Member\MemberReportViewerForm.Designer.cs">
+      <DependentUpon>MemberReportViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Member\MemberHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Member\MemberHistoryForm.Designer.cs">
+      <DependentUpon>MemberHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Setting\SettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Setting\SettingForm.Designer.cs">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\TransactionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\TransactionForm.Designer.cs">
+      <DependentUpon>TransactionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\TransactionSequenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\TransactionSequenceForm.Designer.cs">
+      <DependentUpon>TransactionSequenceForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Database\ServerForm.resx">
+      <DependentUpon>ServerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControl\BorrowedBook\BorrowBookPanel.resx">
+      <DependentUpon>BorrowBookPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControl\HeaderBorder\HeaderBorder.resx">
+      <DependentUpon>HeaderBorder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControl\HolidayCalender\HolidayCalender.resx">
+      <DependentUpon>HolidayCalender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControl\ReturnBook\ReturnBookPanel.resx">
+      <DependentUpon>ReturnBookPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControl\TransactionPanel\TransactionTabPanel.resx">
+      <DependentUpon>TransactionTabPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report\BookReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BookReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\MemberReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MemberReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BookType\BookTypeForm.resx">
+      <DependentUpon>BookTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BookType\EditTypeForm.resx">
+      <DependentUpon>EditTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Book\AddBookForm.resx">
+      <DependentUpon>AddBookForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Book\BookHistoryForm.resx">
+      <DependentUpon>BookHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Book\BookReportViewerForm.resx">
+      <DependentUpon>BookReportViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Holiday\HolidayForm.resx">
+      <DependentUpon>HolidayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Home\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Import\ImportForm.resx">
+      <DependentUpon>ImportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Member\AddMemberForm.resx">
+      <DependentUpon>AddMemberForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Member\AddMemberTableForm.resx">
+      <DependentUpon>AddMemberTableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Member\MemberReportViewerForm.resx">
+      <DependentUpon>MemberReportViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Member\MemberHistoryForm.resx">
+      <DependentUpon>MemberHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Setting\SettingForm.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Transaction\TransactionForm.resx">
+      <DependentUpon>TransactionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Transaction\TransactionSequenceForm.resx">
+      <DependentUpon>TransactionSequenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="LiMS_DBDataSet.xsc">
+      <DependentUpon>LiMS_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LiMS_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LiMS_DBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LiMS_DBDataSet.xss">
+      <DependentUpon>LiMS_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calenderCover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\Chart\" />
+    <Folder Include="View\Survey\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LiMS.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
